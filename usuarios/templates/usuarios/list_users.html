@@ -1,0 +1,24 @@
+<!-- templates/users/list_users.html -->
+{% extends "principal/base.html" %}
+
+{% block content %}
+<h2>List of Users</h2>
+
+<h3>Connected Users</h3>
+<ul>
+    {% for user in connected_users %}
+        <li>{{ user.username }}</li>
+    {% empty %}
+        <li>No users are currently connected.</li>
+    {% endfor %}
+</ul>
+
+<h3>Disconnected Users</h3>
+<ul>
+    {% for user in disconnected_users %}
+        <li>{{ usuarios.username }}</li>
+    {% empty %}
+        <li>All users are currently connected.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
